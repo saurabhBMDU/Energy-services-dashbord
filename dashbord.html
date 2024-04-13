@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <title>Document</title>
+  <style>
+    .icon-bg {
+      width: 50px;
+      height: 50px;
+      background-color: #3256cb2e;
+      /* Customize the icon background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      transition: box-shadow 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .dropdown-container {
+      display: none;
+      background-color: #262626;
+      padding-left: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="z-index: 1;">
+    <div class="container-fluid">
+      <div class="">
+        <img src="images/logo-3.webp" alt="" style="width: 120px;">
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="pt-3" id="openModalButton">
+          <p class=" px-4"><i class="fa-solid fa-bell"></i></p>
+        </div>
+        <div class="d-flex justify-content-center" style=" margin-top: 14px;">
+          <div style="height: 30px; width: 30px;">
+            <img src="images/profile.png" alt="" style="width: 20px;">
+          </div>
+          <div class="d-flex">
+            <p class="fs-6">Profile</p>
+            <i onclick="myFunction()" class="fa-solid fa-caret-down px-2 mt-1 dropbtn"></i>
+            <div id="myDropdown" class="dropdown-content">
+              <div class="d-flex justify-content-start px-2 py-1">
+                <i class="fa-solid fa-arrow-right-from-bracket mt-1"></i>
+                <a href="#contact">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="d-flex justify-content-center">
+    <div class="s-layout">
+      <div class="s-layout__sidebar" style="z-index: 1;">
+        <a class="s-sidebar__trigger" href="#0">
+          <i class="fa fa-bars" style="color: white;"></i>
+        </a>
+        <nav class="s-sidebar__nav">
+          <ul>
+            <li>
+              <a class="s-sidebar__nav-link active" href="/dashbord.html">
+                <i class="fa fa-home"></i><em>Dashbord</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="/user.html">
+                <i class="fa-solid fa-user"></i><em>User Profile</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="#0">
+                <i class="fa-brands fa-critical-role"></i><em>Role Management</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="#0">
+                <i class="fa-solid fa-clock-rotate-left"></i><em>History</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="/complaint.html">
+                <i class="fa-solid fa-circle-dot"></i><em>Complain</em>
+              </a>
+            </li>
+            <li class=" dropdown-btn position-relative">
+              <a class="s-sidebar__nav-link d-flex justify-content-between">
+                <i class="fa-solid fa-user-plus"></i><em>Manage Admin</em>
+                <div>
+                  <i class="fa-solid fa-caret-down position-absolute" style="right: 19px; top: 11px;"></i>
+                </div>
+              </a>
+            </li>
+            <div class="dropdown-container">
+              <li>
+                <a class="s-sidebar__nav-link" href="/all-user.html">
+                  <em>All User</em>
+                </a>
+              </li>
+              <li>
+                <a class="s-sidebar__nav-link" href="/add-user.html">
+                  <em>Add User</em>
+                </a>
+              </li>
+            </div>
+            <li>
+              <a class="s-sidebar__nav-link" href="#0">
+                <i class="fa-brands fa-stack-overflow"></i><em>Task</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="/call-log.html">
+                <i class="fa-solid fa-phone-volume"></i><em>Call log</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="/feedback.html">
+                <i class="fa-solid fa-message"></i><em>Feedback</em>
+              </a>
+            <li>
+              <a class="s-sidebar__nav-link" href="/payment.html">
+                <i class="fa-solid fa-indian-rupee-sign"></i><em>Payment history</em>
+              </a>
+            </li>
+            <li>
+              <a class="s-sidebar__nav-link" href="/Billing-Management.html">
+                <i class="fa-solid fa-money-bill"></i><em>Billing Management</em>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <main class="s-layout__content px-4">
+    <section class="">
+      <div class="row">
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="images/profile.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #FC9FB3;">Total Users</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="images/booking.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #90D7D7;">Total Booking</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="https://cdn-icons-png.flaticon.com/128/10509/10509226.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #BFA1FD;">Total Call</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="https://cdn-icons-png.flaticon.com/128/10339/10339845.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #FC9FB3;">Total Payment</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="images/profile.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #FCE098;">Total History</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="images/booking.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #FC9FB3;">Total Feedback</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="https://cdn-icons-png.flaticon.com/128/10509/10509226.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #83C5F1;">Total Complain</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-3 py-1">
+          <div class="card bg-light shadow-sm p-3">
+            <div class="d-flex align-items-center">
+              <div class="icon-bg rounded-circle mr-3">
+                <img src="https://cdn-icons-png.flaticon.com/128/10339/10339845.png" alt="" class="icon">
+              </div>
+              <div class="px-3">
+                <h5 class="fw-bold mb-0" style="color: #BFA1FD;">Total Bill</h5>
+                <p class="text-muted fw-bold mb-0">23</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="row py-3">
+        <div class="col-md-8 shadow-sm bg-light">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-md-4 shadow-sm bg-light">
+          <canvas id="paymentPieChart" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+<script>
+  // Data for the chart
+  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'jul', 'Aug', 'sep', 'Oct', 'Nov', 'Dec'];
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My User',
+      backgroundColor: 'rgb(36,62,86)',
+      borderColor: 'rgb(36,62,86)',
+      data: [10, 5, 80, 81],
+      tension: 0.1
+    }]
+  };
+
+  // Configuration options
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  // Create the chart
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+<script>
+  // Data for the pie chart
+  const paymentData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'jul', 'Aug', 'sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [{
+      label: 'Payment',
+      data: [800, 300, 200, 100, 500, 56, 87, 123, 345, 345, 123, 456], // Example amounts for each category
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+      ],
+      borderWidth: 0
+    }]
+  };
+
+  // Get the canvas element
+  const ctx = document.getElementById('paymentPieChart').getContext('2d');
+
+  // Create the pie chart
+  const myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: paymentData,
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Payment Distribution'
+        }
+      }
+    }
+  });
+</script>
+<script>
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+</script>
+
+</html>
